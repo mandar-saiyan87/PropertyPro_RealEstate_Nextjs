@@ -12,7 +12,7 @@ const PropertyCard = ({ data }) => {
 
   return (
     <>
-      <div className='w-full flex flex-col rounded-lg shadow-md max-h-[450px] xl:max-h-[390px]'>
+      <div className='w-full flex flex-col rounded-lg shadow-md max-h-[450px] xl:max-h-[390px] cursor-pointer hover:scale-[1.07] ease-in duration-300'>
         <Image src={data.img_url} width={800} height={800} className='rounded-t-lg w-full h-[55%]' alt={data.property_name} />
         {/* <img src={data.img_url} alt="image" className='rounded-t-lg w-full h-[55%]' /> */}
 

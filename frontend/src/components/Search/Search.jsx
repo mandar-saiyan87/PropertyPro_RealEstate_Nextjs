@@ -13,7 +13,7 @@ const Search = () => {
   // const dispatch = useDispatch()
 
   return (
-    <div className='w-[90%] max-w-[950px] gap-5 flex flex-col m-auto py-4 px-6 rounded-lg shadow-md md:flex-row md:bg-transparent md:backdrop-blur md:relative md:-top-7 md:py-2 md:px-4 lg:py-4 lg:px-6'>
+    <div className='w-[90%] max-w-[950px] gap-5 flex flex-col m-auto py-4 px-6 rounded-lg shadow-md md:flex-row md:bg-transparent md:backdrop-blur md:relative md:-top-7 md:py-2 md:px-4 lg:py-3 lg:px-6'>
       <LocationSearch />
       <PropertyTypeSearch />
       <PriceRangeSearch />
