@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { BiBed, BiBath, BiShapeSquare } from 'react-icons/bi'
 
-import RealEstateData from '../data/data'
+import RealEstateData from '../../data/data'
 
 const PropertyCard = ({ data }) => {
 
