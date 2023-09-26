@@ -3,10 +3,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { BsFillHouseDoorFill } from 'react-icons/bs'
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
-// import { useDispatch } from 'react-redux'
-// import { propertySlice } from '@/src/store/PropertySlice'
-
-import RealEstateData from '@/data/data'
+import { useDispatch, useSelector } from 'react-redux'
+import { propertySlice } from '@/store/PropertySlice'
 
 
 const get_propertytype = (proprtyList) => {
@@ -21,23 +19,27 @@ const get_propertytype = (proprtyList) => {
 
 const PropertyTypeSearch = () => {
 
-  const propertyTypeValues = get_propertytype(RealEstateData)
+  const allProperties = useSelector(state => state.properties.properties)
+
+  const propertyTypeValues = get_propertytype(allProperties)
 
   const [propType, setpropType] = useState(propertyTypeValues[0])
 
   const [isOPen, setIsOpen] = useState(false)
 
-  // const dispatch = useDispatch()
+
 
   const handleSelection = (value) => {
     setpropType(value)
     setIsOpen(false)
   }
 
-  // const handleChange = (type) => {
-  //   dispatch(propertySlice.actions.setPropertyType(type))
-  //   handleSelection(type)
-  // }
+  const dispatch = useDispatch()
+
+  const handleChange = (type) => {
+    dispatch(propertySlice.actions.setPropertyTypeFilter(type))
+    handleSelection(type)
+  }
 
 
   const dropDownRef = useRef(null)
@@ -72,7 +74,7 @@ const PropertyTypeSearch = () => {
             <div
               key={index}
               className='my-2 hover:text-[#6230a3] cursor-pointer'
-              onClick={() => handleSelection(typeValue)}
+              onClick={() => handleChange(typeValue)}
             >
               {typeValue}
             </div>

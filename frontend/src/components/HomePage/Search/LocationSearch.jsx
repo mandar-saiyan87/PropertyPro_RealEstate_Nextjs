@@ -3,9 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { GrLocation } from 'react-icons/gr'
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
-// import { useDispatch } from 'react-redux'
-// import { propertySlice } from '@/src/store/PropertySlice'
-import RealEstateData from '@/data/data'
+import { useDispatch, useSelector } from 'react-redux'
+import { propertySlice } from '@/store/PropertySlice'
+
 
 const get_cities = (cityList) => {
   const cities = ['Location (All)']
@@ -20,25 +20,27 @@ const get_cities = (cityList) => {
 
 const LocationSearch = () => {
 
-  // const locationValues = ['Location (any)', 'Mumbai', 'Pune', 'Nashik']
+  const allProperties = useSelector(state => state.properties.properties)
 
-  const unique_cities = get_cities(RealEstateData)
+  const unique_cities = get_cities(allProperties)
 
   const [location, setLocation] = useState(unique_cities[0])
 
   const [isOPen, setIsOpen] = useState(false)
 
-  // const dispatch = useDispatch()
 
   const handleSelection = (value) => {
     setLocation(value)
     setIsOpen(false)
   }
 
-  // const handleChange = (city) => {
-  //   dispatch(propertySlice.actions.setCity(city))
-  //   handleSelection(city)
-  // }
+
+  const dispatch = useDispatch()
+
+  const handleChange = (city) => {
+    dispatch(propertySlice.actions.setLocationFilter(city))
+    handleSelection(city)
+  }
 
   const dropDownRef = useRef(null)
 
@@ -71,7 +73,7 @@ const LocationSearch = () => {
             <div
               key={index}
               className='my-2 hover:text-[#6230a3] cursor-pointer'
-              onClick={() => handleSelection(loc)}
+              onClick={() => handleChange(loc)}
             >
               {loc}
             </div>

@@ -3,8 +3,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { FaDollarSign } from 'react-icons/fa'
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
-// import { useDispatch } from 'react-redux'
-// import { propertySlice } from '@/src/store/PropertySlice'
+import { useDispatch } from 'react-redux'
+import { propertySlice } from '@/store/PropertySlice'
 
 const PriceRangeSearch = () => {
 
@@ -14,17 +14,19 @@ const PriceRangeSearch = () => {
 
   const [isOPen, setIsOpen] = useState(false)
 
-  // const dispatch = useDispatch()
+
 
   const handleSelection = (value) => {
     setpriceValues(value)
     setIsOpen(false)
   }
 
-  // const handleChange = (range) => {
-  //   dispatch(propertySlice.actions.setPriceRange(range))
-  //   handleSelection(range)
-  // }
+  const dispatch = useDispatch()
+
+  const handleChange = (range) => {
+    dispatch(propertySlice.actions.setPriceFilter(range))
+    handleSelection(range)
+  }
 
   const dropDownRef = useRef()
 
@@ -57,7 +59,7 @@ const PriceRangeSearch = () => {
             <div
               key={index}
               className='my-2 hover:text-[#6230a3] cursor-pointer'
-              onClick={() => handleSelection(priceRange)}
+              onClick={() => handleChange(priceRange)}
             >
               {priceRange}
             </div>
