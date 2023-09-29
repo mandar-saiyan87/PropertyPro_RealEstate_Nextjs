@@ -8,7 +8,6 @@ import PropertiesView from '@/components/HomePage/PropertiesView';
 export default function Home() {
   return (
     <>
-
       <HeroSection />
       <Search />
       <PropertiesView/>

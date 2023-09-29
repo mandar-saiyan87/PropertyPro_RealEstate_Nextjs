@@ -10,9 +10,9 @@ const PropertiesView = () => {
   return (
     <div className='w-full max-w-[1536px] px-4 my-10 mx-auto flex items-center justify-center md:px-5'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-3'>
-        {propertiesList.map((data, index) => {
+        {propertiesList.map((data) => {
           return (
-            <PropertyCard data={data} key={index} image={data['img_url']} />
+            <PropertyCard data={data} key={data.id}/>
           )
         })}
       </div>

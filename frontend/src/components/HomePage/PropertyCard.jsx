@@ -10,9 +10,13 @@ const PropertyCard = ({ data }) => {
   // const data = RealEstateData[0]
   // console.log(image)
 
+  const handleClick = (id) => {
+    console.log(id)
+  }
+
   return (
     <>
-      <div className='w-full flex flex-col rounded-lg shadow-md max-h-[450px] xl:max-h-[390px] cursor-pointer hover:scale-[1.07] ease-in duration-300'>
+      <div className='w-full flex flex-col rounded-lg shadow-md max-h-[450px] xl:max-h-[390px] cursor-pointer hover:scale-[1.07] ease-in duration-300' onClick={() => handleClick(data.id)}>
         <Image src={data.img_url} width={800} height={800} className='rounded-t-lg w-full h-[55%]' alt={data.property_name} />
         {/* <img src={data.img_url} alt="image" className='rounded-t-lg w-full h-[55%]' /> */}
 
