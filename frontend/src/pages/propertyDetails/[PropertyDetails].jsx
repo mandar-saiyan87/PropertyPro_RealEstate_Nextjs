@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { BiBed, BiBath, BiShapeSquare } from 'react-icons/bi'
 
-const propertyDetails = () => {
+const PropertyDetails = () => {
 
   const router = useRouter()
 
@@ -128,6 +128,6 @@ const propertyDetails = () => {
   )
 }
 
-export default propertyDetails
+export default PropertyDetails
 
 
