@@ -93,32 +93,32 @@ const PropertyDetails = () => {
           </div>
           <div className='bg-[#ecdffc] p-5 rounded-lg lg:w-[30%] lg:h-[90%] lg:mt-5'>
             <h3 className='font-semibold text-[#0D263B] text-center mt-3'>Contact Owner</h3>
-            <form action="">
-              <div className='flex flex-col my-3 gap-1'>
-                <label htmlFor="fname" className='text-[#0D263B] text-sm'>Full Name</label>
-                <input type="text" id="fname" name="fullname" placeholder='Your full name' className='p-1.5 rounded-md text-sm border-[1px] border-slate-400 focus:outline-none' />
-              </div>
+            {/* <form action="#"> */}
+            <div className='flex flex-col my-3 gap-1'>
+              <label htmlFor="fname" className='text-[#0D263B] text-sm'>Full Name</label>
+              <input type="text" id="fname" name="fullname" placeholder='Your full name' className='p-1.5 rounded-md text-sm border-[1px] border-slate-400 focus:outline-none' />
+            </div>
 
-              <div className='flex flex-col my-3 gap-1'>
-                <label htmlFor="email" className='text-[#0D263B] text-sm'>Email</label>
-                <input type='email' id="email" name="email" placeholder='Your Email' className='p-1.5 rounded-md text-sm border-[1px] border-slate-400 focus:outline-none' />
-              </div>
+            <div className='flex flex-col my-3 gap-1'>
+              <label htmlFor="email" className='text-[#0D263B] text-sm'>Email</label>
+              <input type='email' id="email" name="email" placeholder='Your Email' className='p-1.5 rounded-md text-sm border-[1px] border-slate-400 focus:outline-none' />
+            </div>
 
-              <div className='flex flex-col my-3 gap-1'>
-                <label htmlFor="phone" className='text-[#0D263B] text-sm'>Phone Number</label>
-                <input type='number' id="phone" name="phone" placeholder='Phone Number' className='p-1.5 rounded-md text-sm border-[1px] border-slate-400 focus:outline-none' />
-              </div>
+            <div className='flex flex-col my-3 gap-1'>
+              <label htmlFor="phone" className='text-[#0D263B] text-sm'>Phone Number</label>
+              <input type='number' id="phone" name="phone" placeholder='Phone Number' className='p-1.5 rounded-md text-sm border-[1px] border-slate-400 focus:outline-none' />
+            </div>
 
-              <div className='flex flex-col my-3 gap-1'>
-                <label htmlFor="phone" className='text-[#0D263B] text-sm'>Message</label>
-                <textarea type='text' id="phone" name="message" placeholder='Message' rows='5' className='p-1.5 rounded-md text-sm border-[1px] border-slate-400 focus:outline-none' />
-              </div>
+            <div className='flex flex-col my-3 gap-1'>
+              <label htmlFor="phone" className='text-[#0D263B] text-sm'>Message</label>
+              <textarea type='text' id="phone" name="message" placeholder='Message' rows='5' className='p-1.5 rounded-md text-sm border-[1px] border-slate-400 focus:outline-none' />
+            </div>
 
-              <div className='flex justify-center mt-5 mb-7'>
-                <button type="submit" className='text-#0D263B border-[1px] border-[#0D263B] tracking-wide py-1 px-16 rounded-md active:opacity-70'>Submit</button>
-              </div>
+            <div className='flex justify-center mt-5 mb-7'>
+              <button type="submit" className='text-#0D263B border-[1px] border-[#0D263B] tracking-wide py-1 px-16 rounded-md active:opacity-70'>Submit</button>
+            </div>
 
-            </form>
+            {/* </form> */}
           </div>
         </div>
       </div>}
