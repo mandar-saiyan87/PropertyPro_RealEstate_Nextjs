@@ -38,10 +38,14 @@ export const propertySlice = createSlice({
       })
       state.properties = filteredProperties
       // console.log(state.properties)
-    }
+    },
   }
 
 })
+
+
+
+
 
 
 

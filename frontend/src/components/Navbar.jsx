@@ -106,8 +106,8 @@ const Navbar = () => {
             </ul>
           </div>
           <div className='flex gap-3 my-10'>
-            <button className='flex items-center border-[1px] rounded-md font-semibold text-sm px-4 py-2 hover:bg-gray-100 tracking-wide'>Log In</button>
-            <button className='flex items-center rounded-md text-sm bg-[#6230a3] text-white font-semibold px-4 py-2 hover:bg-purple-700 tracking-wide'>Sign Up</button>
+            <button className='flex items-center border-[1px] rounded-md font-semibold text-sm px-4 py-2 tracking-wide hover:bg-gray-100'>Log In</button>
+            <button className='flex items-center rounded-md text-sm bg-[#6230a3] text-white font-semibold px-4 py-2 tracking-wide hover:bg-purple-700'>Sign Up</button>
           </div>
         </div>
       </div>

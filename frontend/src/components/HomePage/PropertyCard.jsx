@@ -1,22 +1,15 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 
 import { BiBed, BiBath, BiShapeSquare } from 'react-icons/bi'
 
-import RealEstateData from '../../data/data'
-
 const PropertyCard = ({ data }) => {
-
-  // const data = RealEstateData[0]
-  // console.log(image)
-
-  const handleClick = (id) => {
-    console.log(id)
-  }
 
   return (
     <>
-      <div className='w-full flex flex-col rounded-lg shadow-md max-h-[450px] xl:max-h-[390px] cursor-pointer hover:scale-[1.07] ease-in duration-300' onClick={() => handleClick(data.id)}>
+      <Link href={{ pathname: `/propertyDetails/${data.property_name}`, query: data }} className='w-full flex flex-col rounded-lg shadow-md max-h-[450px] xl:max-h-[390px] cursor-pointer hover:scale-[1.07] ease-in duration-300'>
+
         <Image src={data.img_url} width={800} height={800} className='rounded-t-lg w-full h-[55%]' alt={data.property_name} />
         {/* <img src={data.img_url} alt="image" className='rounded-t-lg w-full h-[55%]' /> */}
 
@@ -27,20 +20,20 @@ const PropertyCard = ({ data }) => {
           <div className='my-5 grid gap-2 grid-cols-2 xl:grid-cols-3'>
             <div className='flex items-center'>
               <BiBed size={19} color='#BC7AF9' className='mr-1' />
-              <div className='text-sm text-slate-400'>{data.property_features[0]}</div>
+              <div className='text-sm text-slate-400'>{data.bedrooms}</div>
             </div>
             <div className='flex items-center'>
               <BiBath size={19} color='#BC7AF9' className='mr-1' />
-              <div className='text-sm text-slate-400'>{data.property_features[1]}</div>
+              <div className='text-sm text-slate-400'>{data.bathrooms}</div>
             </div>
             <div className='flex items-center'>
               <BiShapeSquare size={19} color='#BC7AF9' className='mr-1' />
-              <div className='text-sm text-slate-400'>{data.property_features[2]}</div>
+              <div className='text-sm text-slate-400'>{data.area}</div>
             </div>
           </div>
         </div>
 
-      </div>
+      </Link>
     </>
 
   )
